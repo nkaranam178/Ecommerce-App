@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+data:
+  # Scale to zero grace period is the time an inactive revision is left
+  # running before it is scaled to zero (min: 30s).
+  enable-scale-to-zero: "true"
+  scale-to-zero-grace-period: "6s"
